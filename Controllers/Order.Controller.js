@@ -27,15 +27,14 @@ module.exports = {
   },
   UpdateOrder: async (req, res, next) => {
     try {
-      const { id, orderStatus } = req.params;
+      const { id, status } = req.params;
       const order = await Order.findByIdAndUpdate(
         { orderNumber: id },
         {
-          orderStatus,
+          orderStatus: status,
         },
         {
           new: true,
-          runValidators: true,
         }
       );
       if (!order) throw createError.BadRequest("Order Status Update Failed");
