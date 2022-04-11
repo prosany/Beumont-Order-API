@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+.env.demo
+.env.demo.local
+.env.demo.development
+.env.demo.test
+.env.demo.production
+.env.demo.staging
+
+package-lock.json
+yarn.lock
+yarn-error.log

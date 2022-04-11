@@ -1,0 +1,2 @@
+# Get All Orders
+GET http://localhost:9191/api/orders
