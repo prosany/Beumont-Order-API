@@ -29,7 +29,7 @@ module.exports = {
     try {
       const { id, status } = req.query;
       const order = await Order.findByIdAndUpdate(
-        { _id: id },
+        { orderNumber: id },
         {
           orderStatus: status,
         },
