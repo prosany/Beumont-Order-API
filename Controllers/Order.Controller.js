@@ -27,7 +27,7 @@ module.exports = {
   },
   UpdateOrder: async (req, res, next) => {
     try {
-      const { id, status } = req.params;
+      const { id, status } = req.query;
       const order = await Order.findByIdAndUpdate(
         { _id: id },
         {
