@@ -1,4 +1,5 @@
 const createError = require("http-errors");
+const CreateOrderID = require("../Helpers/OrderID");
 const Order = require("../Models/Order.Model");
 
 module.exports = {
@@ -13,7 +14,10 @@ module.exports = {
   },
   CreateOrder: async (req, res, next) => {
     try {
-      const order = new Order(req.body);
+      const order = new Order({
+        ...req.body,
+        orderNumber: "BM-" + CreateOrderID(6),
+      });
       const savedOrder = await order.save();
       if (!savedOrder) throw createError.BadRequest("Order Placed Failed");
       res.send({ status: 1, message: "Order Placed Successful" });

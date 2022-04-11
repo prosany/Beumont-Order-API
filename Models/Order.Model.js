@@ -11,6 +11,7 @@ const orderSchema = new Schema(
       type: String,
       required: true,
       enum: ["pending", "processing", "shipped", "delivered", "cancelled"],
+      default: "pending",
     },
     orderDetails: {
       type: Object,
@@ -27,6 +28,7 @@ const orderSchema = new Schema(
     paymentDate: {
       type: Date,
       required: true,
+      default: () => new Date(),
     },
     paymentLink: {
       type: Object,
