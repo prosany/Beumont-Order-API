@@ -9,6 +9,6 @@ const { validate } = require("../Middleware/validate");
 
 router.get("/orders", Orders);
 router.post("/create-order", validate, CreateOrder);
-router.get("/update-order", validate, UpdateOrder);
+router.post("/update-order", validate, UpdateOrder);
 
 module.exports = router;
