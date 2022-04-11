@@ -27,11 +27,11 @@ module.exports = {
   },
   UpdateOrder: async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const { id, orderStatus } = req.params;
       const order = await Order.findByIdAndUpdate(
         { orderNumber: id },
         {
-          orderStatus: req.body.orderStatus,
+          orderStatus,
         },
         {
           new: true,
