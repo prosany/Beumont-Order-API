@@ -5,7 +5,7 @@ const Order = require("../Models/Order.Model");
 module.exports = {
   Orders: async (req, res, next) => {
     try {
-      const orders = await Order.find({});
+      const orders = await Order.find({}).sort({ createdAt: -1 }).exec();
       res.status(200).send({ status: 1, results: orders });
     } catch (error) {
       error.status = 404;
