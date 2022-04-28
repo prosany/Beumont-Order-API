@@ -37,6 +37,7 @@ app.get("/health", async (req, res, next) => {
 });
 
 app.use("/api", require("./Routes/Order.Route"));
+app.use("/api", require("./Routes/Stripe.Route"));
 
 app.use(async (req, res, next) => {
   next(createError.NotFound());
