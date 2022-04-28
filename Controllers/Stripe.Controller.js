@@ -1,7 +1,6 @@
 const { STRIPE_SECRET_KEY } = require("../Config");
 const Stripe = require("stripe")(STRIPE_SECRET_KEY);
 const createError = require("http-errors");
-const StripeOrder = require("../models/Stripe.Model");
 
 module.exports = {
   CreatePayment: async (req, res, next) => {
